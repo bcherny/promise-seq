@@ -19,5 +19,6 @@
   "license": "CC0",
   "devDependencies": {
     "nodeunit": "^0.9.1"
-  }
+  },
+  "engine": "node >= 0.12"
 }
