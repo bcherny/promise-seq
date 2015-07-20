@@ -1,0 +1,23 @@
+{
+  "name": "promise-seq",
+  "version": "1.0.0",
+  "description": "lazy-execute promises in sequence",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test.js"
+  },
+  "keywords": [
+    "lazy",
+    "promise",
+    "sequential",
+    "sequence",
+    "sync",
+    "synchronous",
+    "synchronize"
+  ],
+  "author": "Boris Cherny <boris@performancejs.com> (http://performancejs.com/)",
+  "license": "CC0",
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  }
+}
