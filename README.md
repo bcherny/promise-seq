@@ -1,6 +1,6 @@
 # promise-seq
 
-[![Build Status][build]](https://circleci.com/gh/bcherny/promise-seq) [![npm]](https://www.npmjs.com/package/promise-seq) [![cc0]](http://creativecommons.org/about/cc0)
+[![Build Status][build]](https://circleci.com/gh/bcherny/promise-seq) [![npm]](https://www.npmjs.com/package/promise-seq) [![cc4]](https://creativecommons.org/licenses/by/4.0/)
 
 [build]: https://img.shields.io/circleci/project/bcherny/promise-seq.svg?branch=master&style=flat-square
 [npm]: https://img.shields.io/npm/v/promise-seq.svg?style=flat-square

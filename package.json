@@ -5,6 +5,10 @@
   "main": "index.js",
   "main:esnext": "./index.es2015.js",
   "typings": "./index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcherny/promise-seq.git"
+  },
   "scripts": {
     "build": "tsc -d -m es2015 --outDir .; mv ./index.js ./index.es2015.js; tsc -m commonjs --outDir .;",
     "watch": "tsc -w",
@@ -21,7 +25,7 @@
     "synchronize"
   ],
   "author": "Boris Cherny <boris@performancejs.com> (http://performancejs.com/)",
-  "license": "CC0",
+  "license": "CC-BY-4.0",
   "devDependencies": {
     "ava": "^0.15.2",
     "nodeunit": "^0.9.1",
