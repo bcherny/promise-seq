@@ -1,6 +1,6 @@
 {
   "name": "promise-seq",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Lazy-execute promises in sequence",
   "main": "index.js",
   "main:esnext": "./index.es2015.js",

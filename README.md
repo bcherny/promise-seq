@@ -6,7 +6,7 @@
 [npm]: https://img.shields.io/npm/v/promise-seq.svg?style=flat-square
 [cc4]: https://img.shields.io/npm/l/promise-seq.svg?style=flat-square
 
-lazy-execute promises in sequence
+> lazy-execute promises in sequence
 
 ## install
 
@@ -16,13 +16,13 @@ npm i -s promise-seq
 
 ## usage
 
-```sh
+```js
 import seq from 'promise-seq'
 
 seq([
-	(() => new Promise( ... )),
-	(() => new Promise( ... )),
-	(() => new Promise( ... ))
+	() => new Promise( ... ),
+	() => new Promise( ... ),
+	() => new Promise( ... )
 ])
 .then(
   res => ...,
