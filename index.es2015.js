@@ -1,5 +1,4 @@
-"use strict";
-function seq(promises) {
+export default function seq(promises) {
     return new Promise(function (resolve, reject) {
         const go = function (promises, acc) {
             if (promises[0]) {
@@ -12,5 +11,3 @@ function seq(promises) {
         go(promises, []);
     });
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = seq;

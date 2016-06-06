@@ -24,13 +24,20 @@ seq([
 	(() => new Promise( ... )),
 	(() => new Promise( ... ))
 ])
-.then(res => {
-	...
-}, err => ...)
+.then(
+  res => ...,
+  err => ...
+)
 ```
 
 ## test
 
 ```sh
 npm test
+```
+
+## tdd
+
+```sh
+npm test -- --watch
 ```

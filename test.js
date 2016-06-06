@@ -1,47 +1,49 @@
-const seq = require('./')
+import test from 'ava'
+import seq from './'
 
-exports['it should run tests in sequence, and resolve to the an array of all the member promises\' resolutions'] = function (test) {
+test(`it should run tests in sequence, and resolve to the an array
+      of all the member promises' resolutions`, t => {
 
-	test.expect(1)
-
-	seq([
-		function(){ return new Promise(function (resolve, reject) { resolve(1) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(2) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(3) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(4) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(5) }) }
+	return seq([
+		() => Promise.resolve(1),
+		() => Promise.resolve(2),
+    () => Promise.resolve(3),
+    () => Promise.resolve(4),
+		() => Promise.resolve(5)
 	])
-	.then(function (res) {
-		test.deepEqual(res, [1,2,3,4,5])
-		test.done()
-	}, function (err) {
-		console.error(err)
-		test.equal(err, undefined)
-		test.done()
-	})
+	.then(
+    res => t.deepEqual(res, [1, 2, 3, 4, 5]),
+    err => t.is(err, undefined)
+	)
 
-}
+})
 
-exports['it should reject with the first rejection'] = function (test) {
+test('it should preserve array nesting', t => {
+  return seq([
+    () => seq([() => Promise.resolve(1), () => Promise.resolve(2)]),
+    () => seq([() => Promise.resolve(3), () => Promise.resolve(4)]),
+    () => Promise.all([Promise.resolve(5), Promise.resolve(6)])
+  ])
+  .then(
+    res => t.deepEqual(res, [[1, 2], [3, 4], [5, 6]]),
+    err => t.is(err, undefined)
+	)
+})
 
-	test.expect(1)
+test('it should reject with the first rejection', t => {
 
 	const error = new TypeError('foo')
 
-	seq([
-		function(){ return new Promise(function (resolve, reject) { resolve(1) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(2) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(3) }) },
-		function(){ return new Promise(function (resolve, reject) { reject(error) }) },
-		function(){ return new Promise(function (resolve, reject) { resolve(5) }) }
+	return seq([
+		() => Promise.resolve(1),
+		() => Promise.resolve(2),
+    () => Promise.resolve(3),
+    () => Promise.reject(error),
+		() => Promise.resolve(5)
 	])
-	.then(function (res) {
-		console.error(res)
-		test.deepEqual(res, undefined)
-		test.done()
-	}, function (err) {
-		test.equal(err, error)
-		test.done()
-	})
+	.then(
+		res => t.deepEqual(res, undefined),
+	  err => t.is(err, error)
+	)
 
-}
+})

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "outDir": ".",
+    "sourceMap": false,
+    "target": "es6"
+  },
+  "files": [
+    "./typings/index.d.ts",
+    "./index.ts"
+  ]
+}
