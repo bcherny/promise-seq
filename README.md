@@ -4,7 +4,7 @@
 
 [build]: https://img.shields.io/circleci/project/bcherny/promise-seq.svg?branch=master&style=flat-square
 [npm]: https://img.shields.io/npm/v/promise-seq.svg?style=flat-square
-[cc0]: https://img.shields.io/npm/l/promise-seq.svg?style=flat-square
+[cc4]: https://img.shields.io/npm/l/promise-seq.svg?style=flat-square
 
 lazy-execute promises in sequence
 
