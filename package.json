@@ -1,6 +1,6 @@
 {
   "name": "promise-seq",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Lazy-execute promises in sequence",
   "main": "index.js",
   "main:esnext": "./index.es2015.js",
@@ -12,8 +12,7 @@
   "scripts": {
     "build": "tsc -d -m es2015 --outDir .; mv ./index.js ./index.es2015.js; tsc -m commonjs --outDir .;",
     "watch": "tsc -w",
-    "test": "ava",
-    "postinstall": "typings install"
+    "test": "ava"
   },
   "keywords": [
     "lazy",
@@ -31,12 +30,9 @@
   "author": "Boris Cherny <boris@performancejs.com> (http://performancejs.com/)",
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "ava": "^0.15.2",
-    "nodeunit": "^0.9.1",
-    "typescript": "^1.8.10"
+    "ava": "^0.17",
+    "nodeunit": "^0.10",
+    "typescript": "^2.1"
   },
-  "engine": "node >= 4.0.0",
-  "dependencies": {
-    "typings": "^1.0.4"
-  }
+  "engine": "node >= 4.0.0"
 }

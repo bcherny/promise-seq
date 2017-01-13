@@ -20,9 +20,9 @@ npm i -s promise-seq
 import seq from 'promise-seq'
 
 seq([
-	() => new Promise( ... ),
-	() => new Promise( ... ),
-	() => new Promise( ... )
+  () => new Promise( ... ),
+  () => new Promise( ... ),
+  () => new Promise( ... )
 ])
 .then(
   res => ...,
