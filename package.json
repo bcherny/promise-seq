@@ -1,6 +1,6 @@
 {
   "name": "promise-seq",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Evaluate promises in sequence",
   "main": "index.js",
   "main:esnext": "./index.es2015.js",
