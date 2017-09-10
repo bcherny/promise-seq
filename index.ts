@@ -1,6 +1,6 @@
 export type LazyPromise<A> = () => Promise<A>
 
-export default function seq<A>(promises: LazyPromise<A>[]): Promise<A[]> {
+export function seq<A>(...promises: LazyPromise<A>[]): Promise<A[]> {
   return new Promise(function (resolve, reject) {
 
     const go = function (promises: LazyPromise<A>[], acc: A[]) {

@@ -5,10 +5,11 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "outDir": ".",
-    "sourceMap": false,
+    "sourceMap": true,
     "target": "es6"
   },
   "files": [
-    "./index.ts"
+    "./index.ts",
+    "./test.ts"
   ]
 }
